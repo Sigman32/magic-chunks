@@ -12,7 +12,7 @@
   "author": "Sergey Zwezdin",
   "version": {
     "Major": 1,
-    "Minor": 0,
+    "Minor": 4,
     "Patch": 0
   },
   "demands": [
@@ -61,12 +61,13 @@
       "label": "File type",
       "defaultValue": "Auto",
       "required": true,
-      "helpMarkDown": "Type of the config file: JSON, XML or YAML.",
+      "helpMarkDown": "Type of the config file: JSON, XML, HTML or YAML.",
       "options": {
         "Auto": "Auto detect",
         "Json": "JSON",
         "Xml": "XML",
-        "Yaml": "YAML"
+        "Yaml": "YAML",
+		"Html": "HTML"
       },
       "groupName": "sourcePath"
     },
