@@ -226,5 +226,34 @@ namespace MagicChunks.Tests.Documents
   </connectionstrings>
 </html>", result, ignoreCase: true, ignoreLineEndingDifferences: true, ignoreWhiteSpaceDifferences: true);
         }
+
+        [Fact]
+        public void ValidateHtml5Transform()
+        {
+            // Arrange
+            HtmlDocument document = new HtmlDocument(@"<!DOCTYPE html>
+<html>
+<head>
+  <link href=""build/main.css"" rel=""stylesheet"">
+</head>
+<body>
+</body>
+</html>");
+
+            // Act
+            document.ReplaceKey(new[] { "html", "head", "base", "@href" }, @"/demo/");
+
+            var result = document.ToString();
+
+            // Assert1
+            Assert.Equal(@"<!DOCTYPE html>
+<html>
+<head>
+  <link href=""build/main.css"" rel=""stylesheet"">
+<base href=""/demo/""></head>
+<body>
+</body>
+</html>", result, ignoreCase: true, ignoreLineEndingDifferences: true, ignoreWhiteSpaceDifferences: true);
+        }
     }
 }

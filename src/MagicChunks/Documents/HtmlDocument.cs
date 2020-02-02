@@ -23,7 +23,8 @@ namespace MagicChunks.Documents
             {
                 Document = new HtmlAgilityPack.HtmlDocument();
                 Document.LoadHtml(source);
-                if (String.Compare(Document.DocumentNode.FirstChild.OriginalName, "html", StringComparison.InvariantCultureIgnoreCase) != 0)
+
+                if (String.Compare(Document.DocumentNode.ChildNodes.First(n=>n.NodeType == HtmlAgilityPack.HtmlNodeType.Element).OriginalName, "html", StringComparison.InvariantCultureIgnoreCase) != 0)
                     throw new ArgumentException("Only html files supported", nameof(source));
             }
             catch (Exception ex)
@@ -40,7 +41,7 @@ namespace MagicChunks.Documents
             if (path.Any(String.IsNullOrWhiteSpace))
                 throw new ArgumentException("There is empty items in the path.", nameof(path));
 
-            HtmlAgilityPack.HtmlNode current = Document.DocumentNode.FirstChild;
+            HtmlAgilityPack.HtmlNode current = Document.DocumentNode.ChildNodes.First(n => n.NodeType == HtmlAgilityPack.HtmlNodeType.Element);
             //string documentNamespace = Document.DocumentNode?.Name.NamespaceName ?? String.Empty;
 
             if (current == null)
@@ -62,7 +63,7 @@ namespace MagicChunks.Documents
             if (path.Any(String.IsNullOrWhiteSpace))
                 throw new ArgumentException("There is empty items in the path.", nameof(path));
 
-            HtmlAgilityPack.HtmlNode current = Document.DocumentNode.FirstChild;
+            HtmlAgilityPack.HtmlNode current = Document.DocumentNode.ChildNodes.First(n => n.NodeType == HtmlAgilityPack.HtmlNodeType.Element);
 
             if (current == null)
                 throw new ArgumentException("Root element is not present.", nameof(path));
