@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Documents\HtmllDocumentTests.cs" />
     <Compile Include="Documents\XmlDocumentTests.cs" />
     <Compile Include="Documents\YamlDocumentTests.cs" />
     <Compile Include="Documents\JsonDocumentTests.cs" />

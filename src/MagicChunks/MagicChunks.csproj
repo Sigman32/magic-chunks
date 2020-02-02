@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.18.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.18\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -47,12 +50,14 @@
     <Compile Include="Core\IDocument.cs" />
     <Compile Include="Core\ITransformer.cs" />
     <Compile Include="Documents\CustomObjectFactory.cs" />
+    <Compile Include="Documents\HtmlDocument.cs" />
     <Compile Include="Documents\IgnoreCaseComparer.cs" />
     <Compile Include="Documents\XmlDocument.cs" />
     <Compile Include="Documents\JsonDocument.cs" />
     <Compile Include="Core\TransformationCollection.cs" />
     <Compile Include="Core\Transformer.cs" />
     <Compile Include="Documents\YamlDocument.cs" />
+    <Compile Include="Helpers\HtmlExtensions.cs" />
     <Compile Include="Helpers\JsonExtensions.cs" />
     <Compile Include="Helpers\XmlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
